@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://scripts/objects/door.gd" id="1_porte"]
+[ext_resource type="Material" path="res://assets/materials/porte.tres" id="2_jaune"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_porte"]
+size = Vector3(2.6, 3, 0.3)
+
+[sub_resource type="BoxMesh" id="BoxMesh_porte"]
+size = Vector3(2.6, 3, 0.3)
+
+[node name="Porte" type="AnimatableBody3D"]
+script = ExtResource("1_porte")
+
+[node name="Collision" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+shape = SubResource("BoxShape3D_porte")
+
+[node name="Visuel" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+mesh = SubResource("BoxMesh_porte")
+surface_material_override/0 = ExtResource("2_jaune")

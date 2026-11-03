@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3]
+[gd_scene load_steps=14 format=3]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_main"]
 [ext_resource type="PackedScene" path="res://scenes/levels/test_room.tscn" id="2_salle"]
@@ -6,6 +6,10 @@
 [ext_resource type="Script" path="res://scripts/camera_duo.gd" id="4_camera"]
 [ext_resource type="Script" path="res://scripts/players/magnet_power.gd" id="5_aimant"]
 [ext_resource type="PackedScene" path="res://scenes/objects/metal_crate.tscn" id="6_caisse"]
+[ext_resource type="Script" path="res://scripts/players/spring_power.gd" id="7_ressort"]
+[ext_resource type="PackedScene" path="res://scenes/objects/heavy_button.tscn" id="8_bouton"]
+[ext_resource type="PackedScene" path="res://scenes/objects/door.tscn" id="9_porte"]
+[ext_resource type="Material" path="res://assets/materials/arrivee.tres" id="10_arrivee"]
 
 [sub_resource type="TorusMesh" id="TorusMesh_champ"]
 inner_radius = 1.3
@@ -15,6 +19,9 @@ outer_radius = 1.5
 transparency = 1
 shading_mode = 0
 albedo_color = Color(0.3, 0.6, 1, 0.45)
+
+[sub_resource type="BoxMesh" id="BoxMesh_arrivee"]
+size = Vector3(2, 0.04, 2)
 
 [node name="Main" type="Node3D"]
 script = ExtResource("1_main")
@@ -40,8 +47,22 @@ player_id = 2
 nom = "Ressort"
 couleur = Color(0.98, 0.45, 0.09, 1)
 
+[node name="PouvoirRessort" type="Node3D" parent="Ressort"]
+script = ExtResource("7_ressort")
+
 [node name="CaisseMetal" parent="." instance=ExtResource("6_caisse")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -2.5)
+
+[node name="BoutonLourd" parent="." instance=ExtResource("8_bouton")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 1)
+
+[node name="Porte" parent="." instance=ExtResource("9_porte")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6.25)
+
+[node name="Arrivee" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.02, -8.1)
+mesh = SubResource("BoxMesh_arrivee")
+surface_material_override/0 = ExtResource("10_arrivee")
 
 [node name="CameraDuo" type="Camera3D" parent="." node_paths=PackedStringArray("joueur_a", "joueur_b")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9, 14)
@@ -55,7 +76,10 @@ joueur_b = NodePath("../Ressort")
 offset_left = 16.0
 offset_top = 12.0
 offset_right = 816.0
-offset_bottom = 70.0
+offset_bottom = 100.0
 theme_override_font_sizes/font_size = 20
-text = "Mag & Spring · v0 · étape 5 : pouvoir de l'Aimant
-Aimant : ZQSD + Espace, E attirer, A repousser    Ressort : flèches + Entrée"
+text = "Mag & Spring · v0 · étape 6 : grand saut et bouton lourd
+Aimant : ZQSD + Espace, E attirer, A repousser
+Ressort : flèches + Entrée, Maj droite maintenue puis relâchée = grand saut"
+
+[connection signal="active" from="BoutonLourd" to="Porte" method="ouvrir"]

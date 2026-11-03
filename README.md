@@ -21,7 +21,8 @@ Nom de travail en français : « Aimant & Ressort ».
 | Sauter | Espace | Entrée |
 | Attirer le métal (maintenir) | E | — |
 | Repousser le métal (maintenir) | A | — |
-| Manette | Manette n°1 : stick gauche + A, gâchettes hautes RB attirer / LB repousser | Manette n°2 : stick gauche + A |
+| Grand saut (maintenir pour charger, relâcher pour sauter) | — | Maj droite ou 0 du pavé numérique |
+| Manette | Manette n°1 : stick gauche + A, gâchettes hautes RB attirer / LB repousser | Manette n°2 : stick gauche + A, B grand saut |
 
 Les touches sont définies par leur position sur le clavier : Z Q S D et A E en AZERTY correspondent à W A S D et Q E en QWERTY.
 On peut les changer dans Projet > Paramètres du projet > Contrôles (actions `p1_...` et `p2_...`).
@@ -59,6 +60,9 @@ Chaque type d'objet a sa couleur, pour comprendre la salle d'un coup d'œil.
 | Gris acier, brillant | Objets métalliques, que seul l'Aimant peut déplacer |
 | Bleu | L'Aimant (étape 3) |
 | Orange | Le Ressort (étape 3) |
+| Rouge (vert une fois enfoncé) | Bouton lourd, que seul le Ressort enfonce |
+| Jaune | Porte, ouverte par le bouton lourd |
+| Blanc lumineux | Arrivée, derrière la porte |
 
 ## Feuille de route de la v0
 
@@ -67,6 +71,6 @@ Chaque type d'objet a sa couleur, pour comprendre la salle d'un coup d'œil.
 3. Deux personnages : déplacement, saut, touches séparées. ✅
 4. Caméra qui suit les deux joueurs. ✅
 5. Pouvoir de l'Aimant sur une caisse métallique. ✅
-6. Grand saut du Ressort et bouton lourd qui ouvre une porte.
+6. Grand saut du Ressort et bouton lourd qui ouvre une porte. ✅
 
 Après la v0 : export Web servi par un VPS et jeu en ligne à deux via un relais WebSocket.
