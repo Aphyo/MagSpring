@@ -78,7 +78,7 @@ Chaque type d'objet a sa couleur, pour comprendre la salle d'un coup d'œil.
 Trois salles côte à côte, de gauche à droite. La caméra regarde vers le fond : les murs entre les salles ne cachent donc pas les joueurs.
 
 1. **Salle de l'Aimant** : une caisse en métal bouche le passage vers la salle 2. L'Aimant l'attire (E) pour libérer le chemin. ✅ (étape 1)
-2. **Salle du Ressort** : la porte vers la salle 3 s'ouvre avec un bouton lourd posé en haut d'un bloc violet, que seul le grand saut atteint. (étape 2)
+2. **Salle du Ressort** : la porte vers la salle 3 s'ouvre avec un bouton lourd posé en haut d'un bloc violet, que seul le grand saut atteint. Le bloc est à 6 m des murs, pour que le Ressort ne puisse pas sauter par-dessus depuis son sommet. ✅ (étape 2)
 3. **Salle « Ensemble »** : l'arrivée est en haut d'un bloc de 2,5 m. Le Ressort ouvre la niche où est enfermée une caisse, l'Aimant s'en sert de marche pour monter. (étape 3)
 
 Le passage de la salle 1 est bas (2,2 m) : on ne peut pas sauter par-dessus la caisse.

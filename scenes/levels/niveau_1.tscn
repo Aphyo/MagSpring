@@ -1,8 +1,11 @@
-[gd_scene load_steps=7 format=3]
+[gd_scene load_steps=10 format=3]
 
 [ext_resource type="Material" path="res://assets/materials/sol.tres" id="1_sol"]
 [ext_resource type="Material" path="res://assets/materials/mur.tres" id="2_mur"]
 [ext_resource type="PackedScene" path="res://scenes/objects/metal_crate.tscn" id="3_caisse"]
+[ext_resource type="Material" path="res://assets/materials/plateforme_haute.tres" id="4_violet"]
+[ext_resource type="PackedScene" path="res://scenes/objects/heavy_button.tscn" id="5_bouton"]
+[ext_resource type="PackedScene" path="res://scenes/objects/door.tscn" id="6_porte"]
 
 [sub_resource type="Environment" id="Environment_niveau1"]
 background_mode = 1
@@ -60,6 +63,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 1.1, 0)
 operation = 2
 size = Vector3(1, 2.2, 1.6)
 
+[node name="BlocVioletSalle2" type="CSGBox3D" parent="Decor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.125, -3)
+size = Vector3(4, 4.25, 4)
+material = ExtResource("4_violet")
+
 [node name="MurSalle2Salle3" type="CSGBox3D" parent="Decor"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 4, 0.25)
 size = Vector3(0.5, 8, 12.5)
@@ -83,3 +91,22 @@ outline_size = 12
 
 [node name="CaisseBouchon" parent="Salle1" instance=ExtResource("3_caisse")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0.5, 0)
+
+[node name="Salle2" type="Node3D" parent="."]
+
+[node name="Panneau" type="Label3D" parent="Salle2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.9, -5.95)
+pixel_size = 0.01
+text = "Salle 2 · Le Ressort
+Le bouton lourd, en haut du bloc violet, ouvre la porte jaune.
+Ressort : maintiens Maj droite pour charger, relâche pour sauter."
+font_size = 40
+outline_size = 12
+
+[node name="BoutonLourd" parent="Salle2" instance=ExtResource("5_bouton")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.25, -3)
+
+[node name="Porte" parent="Salle2" instance=ExtResource("6_porte")]
+transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 8, 0, 0)
+
+[connection signal="active" from="Salle2/BoutonLourd" to="Salle2/Porte" method="ouvrir"]
