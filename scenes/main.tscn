@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3]
+[gd_scene load_steps=5 format=3]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_main"]
 [ext_resource type="PackedScene" path="res://scenes/levels/test_room.tscn" id="2_salle"]
 [ext_resource type="PackedScene" path="res://scenes/players/player.tscn" id="3_player"]
+[ext_resource type="Script" path="res://scripts/camera_duo.gd" id="4_camera"]
 
 [node name="Main" type="Node3D"]
 script = ExtResource("1_main")
@@ -20,11 +21,19 @@ player_id = 2
 nom = "Ressort"
 couleur = Color(0.98, 0.45, 0.09, 1)
 
+[node name="CameraDuo" type="Camera3D" parent="." node_paths=PackedStringArray("joueur_a", "joueur_b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9, 14)
+current = true
+fov = 55.0
+script = ExtResource("4_camera")
+joueur_a = NodePath("../Aimant")
+joueur_b = NodePath("../Ressort")
+
 [node name="Titre" type="Label" parent="."]
 offset_left = 16.0
 offset_top = 12.0
 offset_right = 616.0
 offset_bottom = 70.0
 theme_override_font_sizes/font_size = 20
-text = "Mag & Spring · v0 · étape 3 : deux personnages
+text = "Mag & Spring · v0 · étape 4 : caméra commune
 Aimant : ZQSD + Espace    Ressort : flèches + Entrée"

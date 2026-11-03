@@ -23,10 +23,6 @@ transform = Transform3D(0.81915206, 0.46984634, -0.32898995, 0, 0.57357645, 0.81
 light_energy = 0.7
 shadow_enabled = true
 
-[node name="CameraFixe" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.8886207, 0.4586429, 0, -0.4586429, 0.8886207, 0, 9, 14)
-fov = 55.0
-
 [node name="Decor" type="CSGCombiner3D" parent="."]
 use_collision = true
 

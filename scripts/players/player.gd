@@ -27,6 +27,9 @@ extends CharacterBody3D
 # La gravité réglée dans le projet (9,8 m/s² par défaut).
 var gravite: float = ProjectSettings.get_setting("physics/3d/default_gravity")
 
+# Point de départ, pour y revenir si le joueur tombe hors de la salle.
+var _depart: Vector3
+
 @onready var corps: MeshInstance3D = $Corps
 @onready var etiquette: Label3D = $Etiquette
 
@@ -38,6 +41,7 @@ func _ready() -> void:
 	corps.material_override = materiau
 	etiquette.text = nom
 	etiquette.modulate = couleur.lightened(0.4)
+	_depart = global_position
 
 
 func _physics_process(delta: float) -> void:
@@ -67,6 +71,12 @@ func _physics_process(delta: float) -> void:
 
 	# 5. move_and_slide déplace le personnage et gère les collisions (murs, marches...).
 	move_and_slide()
+
+	# 6. Filet de sécurité : si on tombe dans le vide (le devant de la salle est ouvert),
+	#    on revient au point de départ.
+	if global_position.y < -10.0:
+		global_position = _depart
+		velocity = Vector3.ZERO
 
 
 ## Construit le nom complet d'une action pour ce joueur, ex. « p1_saut ».

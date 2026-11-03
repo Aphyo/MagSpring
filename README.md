@@ -62,7 +62,7 @@ Chaque type d'objet a sa couleur, pour comprendre la salle d'un coup d'œil.
 1. Projet initialisé, dossiers rangés. ✅
 2. Salle de test en blocs simples. ✅
 3. Deux personnages : déplacement, saut, touches séparées. ✅
-4. Caméra qui suit les deux joueurs.
+4. Caméra qui suit les deux joueurs. ✅
 5. Pouvoir de l'Aimant sur une caisse métallique.
 6. Grand saut du Ressort et bouton lourd qui ouvre une porte.
 
