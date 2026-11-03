@@ -13,6 +13,17 @@ Nom de travail en français : « Aimant & Ressort ».
 2. Dans le gestionnaire de projets de Godot : **Importer**, choisir le fichier `project.godot` de ce dossier.
 3. Appuyer sur **F5** pour lancer le jeu.
 
+## Commandes
+
+| | Aimant (joueur 1) | Ressort (joueur 2) |
+| --- | --- | --- |
+| Se déplacer | Z Q S D | Flèches |
+| Sauter | Espace | Entrée |
+| Manette | Manette n°1 : stick gauche + A | Manette n°2 : stick gauche + A |
+
+Les touches sont définies par leur position sur le clavier : Z Q S D en AZERTY correspondent à W A S D en QWERTY.
+On peut les changer dans Projet > Paramètres du projet > Contrôles (actions `p1_...` et `p2_...`).
+
 ## Rangement des dossiers
 
 | Dossier | Contenu |
@@ -50,7 +61,7 @@ Chaque type d'objet a sa couleur, pour comprendre la salle d'un coup d'œil.
 
 1. Projet initialisé, dossiers rangés. ✅
 2. Salle de test en blocs simples. ✅
-3. Deux personnages : déplacement, saut, touches séparées.
+3. Deux personnages : déplacement, saut, touches séparées. ✅
 4. Caméra qui suit les deux joueurs.
 5. Pouvoir de l'Aimant sur une caisse métallique.
 6. Grand saut du Ressort et bouton lourd qui ouvre une porte.
