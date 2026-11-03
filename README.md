@@ -82,7 +82,7 @@ Trois salles côte à côte, de gauche à droite. La caméra regarde vers le fon
 3. **Salle « Ensemble »** : l'arrivée est en haut d'un bloc de 2,5 m. Le Ressort ouvre la niche où est enfermée une caisse, l'Aimant s'en sert de marche pour monter. (étape 3)
 
 Le passage de la salle 1 est bas (2,2 m) : on ne peut pas sauter par-dessus la caisse.
-Les murs font 8 m de haut : le grand saut monte à environ 5,2 m, et jusqu'à 6,2 m si le Ressort s'élance depuis la caisse. Les murs entre les salles dépassent un peu dans le vide à l'avant, pour qu'on ne puisse pas les contourner en sautant.
+Les murs font 8 m de haut : le grand saut monte à environ 5,2 m, et jusqu'à 6,2 m si le Ressort s'élance depuis la caisse. L'avant du niveau est fermé par une « vitre » invisible de 12 m de haut (`VitreAvant`, une collision sans dessin) : on ne peut ni contourner les murs par l'avant, ni tomber dans le vide, et la caméra voit à travers.
 Un petit rebord court le long de l'avant du niveau pour que la caisse ne tombe pas dans le vide. Si elle tombe quand même, elle revient à sa place de départ.
 
 Après la v0 : export Web servi par un VPS et jeu en ligne à deux via un relais WebSocket.
