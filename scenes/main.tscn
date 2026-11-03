@@ -1,18 +1,30 @@
-[gd_scene load_steps=2 format=3]
+[gd_scene load_steps=4 format=3]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_main"]
+[ext_resource type="PackedScene" path="res://scenes/levels/test_room.tscn" id="2_salle"]
+[ext_resource type="PackedScene" path="res://scenes/players/player.tscn" id="3_player"]
 
 [node name="Main" type="Node3D"]
 script = ExtResource("1_main")
 
+[node name="SalleTest" parent="." instance=ExtResource("2_salle")]
+
+[node name="Aimant" parent="." instance=ExtResource("3_player")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 2)
+nom = "Aimant"
+couleur = Color(0.23, 0.51, 0.96, 1)
+
+[node name="Ressort" parent="." instance=ExtResource("3_player")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 2)
+player_id = 2
+nom = "Ressort"
+couleur = Color(0.98, 0.45, 0.09, 1)
+
 [node name="Titre" type="Label" parent="."]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 48
-text = "Mag & Spring
-v0 · étape 1"
-horizontal_alignment = 1
-vertical_alignment = 1
+offset_left = 16.0
+offset_top = 12.0
+offset_right = 616.0
+offset_bottom = 70.0
+theme_override_font_sizes/font_size = 20
+text = "Mag & Spring · v0 · étape 3 : deux personnages
+Aimant : ZQSD + Espace    Ressort : flèches + Entrée"
