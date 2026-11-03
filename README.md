@@ -32,7 +32,7 @@ On peut les changer dans Projet > Paramètres du projet > Contrôles (actions `p
 | Dossier | Contenu |
 | --- | --- |
 | `scenes/` | Les scènes Godot (`.tscn`). `main.tscn` est la scène lancée au démarrage. |
-| `scenes/levels/` | Les salles du jeu (salle de test à l'étape 2). |
+| `scenes/levels/` | Les niveaux du jeu : `niveau_1.tscn` (le tutoriel, lancé au démarrage) et `test_room.tscn` (l'ancienne salle de test de la v0, décor seul). |
 | `scenes/players/` | Les deux personnages, l'Aimant et le Ressort. |
 | `scenes/objects/` | Les objets du décor qui réagissent : caisse métallique, bouton, porte. |
 | `scripts/` | Le code GDScript (`.gd`), rangé comme les scènes. |
@@ -72,6 +72,17 @@ Chaque type d'objet a sa couleur, pour comprendre la salle d'un coup d'œil.
 4. Caméra qui suit les deux joueurs. ✅
 5. Pouvoir de l'Aimant sur une caisse métallique. ✅
 6. Grand saut du Ressort et bouton lourd qui ouvre une porte. ✅
+
+## Niveau 1 : le tutoriel
+
+Trois salles côte à côte, de gauche à droite. La caméra regarde vers le fond : les murs entre les salles ne cachent donc pas les joueurs.
+
+1. **Salle de l'Aimant** : une caisse en métal bouche le passage vers la salle 2. L'Aimant l'attire (E) pour libérer le chemin. ✅ (étape 1)
+2. **Salle du Ressort** : la porte vers la salle 3 s'ouvre avec un bouton lourd posé en haut d'un bloc violet, que seul le grand saut atteint. (étape 2)
+3. **Salle « Ensemble »** : l'arrivée est en haut d'un bloc de 2,5 m. Le Ressort ouvre la niche où est enfermée une caisse, l'Aimant s'en sert de marche pour monter. (étape 3)
+
+Le passage de la salle 1 est bas (2,2 m) : on ne peut pas sauter par-dessus la caisse.
+Un petit rebord court le long de l'avant du niveau pour que la caisse ne tombe pas dans le vide. Si elle tombe quand même, elle revient à sa place de départ.
 
 Après la v0 : export Web servi par un VPS et jeu en ligne à deux via un relais WebSocket.
 
