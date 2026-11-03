@@ -42,6 +42,8 @@ func _ready() -> void:
 	etiquette.text = nom
 	etiquette.modulate = couleur.lightened(0.4)
 	_depart = global_position
+	# Le groupe « joueurs » permet à l'arrivée de reconnaître les deux personnages.
+	add_to_group("joueurs")
 
 
 func _physics_process(delta: float) -> void:

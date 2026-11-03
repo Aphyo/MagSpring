@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://scripts/objects/arrivee.gd" id="1_arrivee"]
+[ext_resource type="Material" path="res://assets/materials/arrivee.tres" id="2_blanc"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_dalle"]
+size = Vector3(3, 0.04, 3)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_zone"]
+size = Vector3(3, 2, 3)
+
+[node name="Arrivee" type="Area3D"]
+script = ExtResource("1_arrivee")
+
+[node name="Dalle" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.02, 0)
+mesh = SubResource("BoxMesh_dalle")
+surface_material_override/0 = ExtResource("2_blanc")
+
+[node name="Forme" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("BoxShape3D_zone")
+
+[node name="Bravo" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.5, 0)
+billboard = 1
+no_depth_test = true
+modulate = Color(1, 0.9, 0.3, 1)
+text = "Bravo !
+Niveau réussi"
+font_size = 160
+outline_size = 32

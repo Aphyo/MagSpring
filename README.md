@@ -57,6 +57,7 @@ Chaque type d'objet a sa couleur, pour comprendre la salle d'un coup d'œil.
 | Gris ardoise | Murs |
 | Vert | Marches, accessibles avec un saut normal |
 | Violet | Bloc haut (4,25 m), réservé au grand saut du Ressort |
+| Marron | Bloc moyen (2,4 m) : trop haut pour un saut normal, il faut une caisse comme marche |
 | Gris acier, brillant | Objets métalliques, que seul l'Aimant peut déplacer |
 | Bleu | L'Aimant (étape 3) |
 | Orange | Le Ressort (étape 3) |
@@ -79,9 +80,14 @@ Trois salles côte à côte, de gauche à droite. La caméra regarde vers le fon
 
 1. **Salle de l'Aimant** : une caisse en métal bouche le passage vers la salle 2. L'Aimant l'attire (E) pour libérer le chemin. ✅ (étape 1)
 2. **Salle du Ressort** : la porte vers la salle 3 s'ouvre avec un bouton lourd posé en haut d'un bloc violet, que seul le grand saut atteint. Le bloc est à 6 m des murs, pour que le Ressort ne puisse pas sauter par-dessus depuis son sommet. ✅ (étape 2)
-3. **Salle « Ensemble »** : l'arrivée est en haut d'un bloc de 2,5 m. Le Ressort ouvre la niche où est enfermée une caisse, l'Aimant s'en sert de marche pour monter. (étape 3)
+3. **Salle « Ensemble »** : l'arrivée est en haut d'un bloc de 2,5 m. Le Ressort ouvre la niche où est enfermée une caisse, l'Aimant s'en sert de marche pour monter. ✅ (étape 3)
+   - Le Ressort saute sur le bloc violet : son bouton ouvre la niche du fond, où est enfermée une caisse.
+   - L'Aimant attire la caisse hors de la niche (E), puis la repousse (A) contre le bloc marron de 2,4 m.
+   - Depuis la caisse (1 m), un saut normal (1,8 m) suffit pour monter. Depuis le sol, non.
+   - Quand les deux joueurs sont sur la dalle blanche, « Bravo ! » s'affiche (`scripts/objects/arrivee.gd`).
 
 Le passage de la salle 1 est bas (2,2 m) : on ne peut pas sauter par-dessus la caisse.
+La porte de la salle 3 est posée sur un seuil vert de 50 cm : les joueurs l'enjambent d'un saut, mais l'Aimant ne peut pas y faire passer la caisse de la salle 1 (il pousse à plat, sans soulever). Sinon on pourrait l'utiliser comme marche en salle 3 sans l'aide du Ressort.
 Les murs font 8 m de haut : le grand saut monte à environ 5,2 m, et jusqu'à 6,2 m si le Ressort s'élance depuis la caisse. L'avant du niveau est fermé par une « vitre » invisible de 12 m de haut (`VitreAvant`, une collision sans dessin) : on ne peut ni contourner les murs par l'avant, ni tomber dans le vide, et la caméra voit à travers.
 Un petit rebord court le long de l'avant du niveau pour que la caisse ne tombe pas dans le vide. Si elle tombe quand même, elle revient à sa place de départ.
 
