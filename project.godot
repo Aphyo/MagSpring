@@ -1,5 +1,10 @@
-; Fichier de configuration du projet Godot.
-; On le modifie surtout depuis l'éditeur (Projet > Paramètres du projet).
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
 
 config_version=5
 
