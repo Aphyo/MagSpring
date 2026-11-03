@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
+  <rect width="128" height="128" rx="24" fill="#20242c"/>
+  <!-- L'Aimant : un fer à cheval bleu -->
+  <path d="M18 34v30a22 22 0 0 0 44 0V34h-14v30a8 8 0 0 1-16 0V34z" fill="#3b82f6"/>
+  <rect x="18" y="34" width="14" height="10" fill="#e5e7eb"/>
+  <rect x="48" y="34" width="14" height="10" fill="#e5e7eb"/>
+  <!-- Le Ressort : un zigzag orange -->
+  <polyline points="80,96 108,88 80,80 108,72 80,64 108,56 80,48 108,40" fill="none" stroke="#f97316" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

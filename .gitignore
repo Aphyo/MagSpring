@@ -1,0 +1,6 @@
+# Cache de Godot : recréé automatiquement à l'ouverture du projet
+.godot/
+
+# Exports (version Web, Windows...) : on ne les met pas dans le dépôt
+export/
+*.tmp

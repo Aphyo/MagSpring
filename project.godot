@@ -1,0 +1,28 @@
+; Fichier de configuration du projet Godot.
+; On le modifie surtout depuis l'éditeur (Projet > Paramètres du projet).
+
+config_version=5
+
+[application]
+
+config/name="Mag & Spring"
+config/description="Coop à deux : un Aimant et un Ressort résolvent des énigmes ensemble."
+run/main_scene="res://scenes/main.tscn"
+config/features=PackedStringArray("4.5", "GL Compatibility")
+config/icon="res://icon.svg"
+
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
+
+[physics]
+
+3d/physics_engine="Jolt Physics"
+
+[rendering]
+
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
