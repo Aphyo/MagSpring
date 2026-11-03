@@ -33,10 +33,23 @@ Le dossier `.godot/` est un cache local, ignoré par git.
 - **Physique Jolt** : moteur physique intégré à Godot, plus stable pour les objets poussés.
 - **Fenêtre 1280 × 720** qui s'adapte à la taille de l'écran.
 
+## Code couleur
+
+Chaque type d'objet a sa couleur, pour comprendre la salle d'un coup d'œil.
+
+| Couleur | Objet |
+| --- | --- |
+| Gris clair | Sol |
+| Gris ardoise | Murs |
+| Vert | Marches, accessibles avec un saut normal |
+| Violet | Plateforme haute, réservée au grand saut du Ressort |
+| Bleu | L'Aimant (étape 3) |
+| Orange | Le Ressort (étape 3) |
+
 ## Feuille de route de la v0
 
 1. Projet initialisé, dossiers rangés. ✅
-2. Salle de test en blocs simples.
+2. Salle de test en blocs simples. ✅
 3. Deux personnages : déplacement, saut, touches séparées.
 4. Caméra qui suit les deux joueurs.
 5. Pouvoir de l'Aimant sur une caisse métallique.

@@ -1,9 +1,9 @@
 extends Node3D
 ## Scène de départ du jeu.
-## Pour l'instant elle affiche seulement le titre : elle sert à vérifier
-## que le projet s'ouvre et se lance. La salle de test arrive à l'étape 2.
+## Elle charge la salle de test (scenes/levels/test_room.tscn).
+## Les joueurs y seront ajoutés à l'étape 3.
 
 
 func _ready() -> void:
-	# Ce message s'affiche dans le panneau « Sortie » en bas de l'éditeur.
-	print("Mag & Spring : le projet démarre bien.")
+	# Ce message s'affiche dans le panneau « Output » en bas de l'éditeur.
+	print("Mag & Spring : la salle de test est chargée.")
