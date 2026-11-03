@@ -56,7 +56,7 @@ Chaque type d'objet a sa couleur, pour comprendre la salle d'un coup d'œil.
 | Gris clair | Sol |
 | Gris ardoise | Murs |
 | Vert | Marches, accessibles avec un saut normal |
-| Violet | Plateforme haute, réservée au grand saut du Ressort |
+| Violet | Bloc haut (4,25 m), réservé au grand saut du Ressort |
 | Gris acier, brillant | Objets métalliques, que seul l'Aimant peut déplacer |
 | Bleu | L'Aimant (étape 3) |
 | Orange | Le Ressort (étape 3) |
@@ -74,3 +74,8 @@ Chaque type d'objet a sa couleur, pour comprendre la salle d'un coup d'œil.
 6. Grand saut du Ressort et bouton lourd qui ouvre une porte. ✅
 
 Après la v0 : export Web servi par un VPS et jeu en ligne à deux via un relais WebSocket.
+
+## Règle de conception des niveaux
+
+Pas de plateformes qui flottent dans le vide : tout ce qui est en hauteur est un bloc plein posé au sol.
+Avec la caméra en perspective, on juge mal où se trouve une plateforme volante et on se cogne la tête dessous.

@@ -87,6 +87,6 @@ size = Vector3(2, 1.5, 3)
 material = ExtResource("3_asmw1")
 
 [node name="PlateformeHaute" type="CSGBox3D" parent="Decor"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 4, -3.5)
-size = Vector3(4, 0.5, 4)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 2.125, -3.5)
+size = Vector3(4, 4.25, 4)
 material = ExtResource("4_sa601")
