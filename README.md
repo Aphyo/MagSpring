@@ -19,9 +19,11 @@ Nom de travail en français : « Aimant & Ressort ».
 | --- | --- | --- |
 | Se déplacer | Z Q S D | Flèches |
 | Sauter | Espace | Entrée |
-| Manette | Manette n°1 : stick gauche + A | Manette n°2 : stick gauche + A |
+| Attirer le métal (maintenir) | E | — |
+| Repousser le métal (maintenir) | A | — |
+| Manette | Manette n°1 : stick gauche + A, gâchettes hautes RB attirer / LB repousser | Manette n°2 : stick gauche + A |
 
-Les touches sont définies par leur position sur le clavier : Z Q S D en AZERTY correspondent à W A S D en QWERTY.
+Les touches sont définies par leur position sur le clavier : Z Q S D et A E en AZERTY correspondent à W A S D et Q E en QWERTY.
 On peut les changer dans Projet > Paramètres du projet > Contrôles (actions `p1_...` et `p2_...`).
 
 ## Rangement des dossiers
@@ -54,6 +56,7 @@ Chaque type d'objet a sa couleur, pour comprendre la salle d'un coup d'œil.
 | Gris ardoise | Murs |
 | Vert | Marches, accessibles avec un saut normal |
 | Violet | Plateforme haute, réservée au grand saut du Ressort |
+| Gris acier, brillant | Objets métalliques, que seul l'Aimant peut déplacer |
 | Bleu | L'Aimant (étape 3) |
 | Orange | Le Ressort (étape 3) |
 
@@ -63,7 +66,7 @@ Chaque type d'objet a sa couleur, pour comprendre la salle d'un coup d'œil.
 2. Salle de test en blocs simples. ✅
 3. Deux personnages : déplacement, saut, touches séparées. ✅
 4. Caméra qui suit les deux joueurs. ✅
-5. Pouvoir de l'Aimant sur une caisse métallique.
+5. Pouvoir de l'Aimant sur une caisse métallique. ✅
 6. Grand saut du Ressort et bouton lourd qui ouvre une porte.
 
 Après la v0 : export Web servi par un VPS et jeu en ligne à deux via un relais WebSocket.

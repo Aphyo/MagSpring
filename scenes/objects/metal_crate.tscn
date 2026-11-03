@@ -1,0 +1,25 @@
+[gd_scene load_steps=6 format=3]
+
+[ext_resource type="Script" path="res://scripts/objects/metal_crate.gd" id="1_caisse"]
+[ext_resource type="Material" path="res://assets/materials/metal.tres" id="2_metal"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_caisse"]
+friction = 0.5
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_caisse"]
+size = Vector3(1, 1, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_caisse"]
+size = Vector3(1, 1, 1)
+
+[node name="CaisseMetal" type="RigidBody3D"]
+mass = 20.0
+physics_material_override = SubResource("PhysicsMaterial_caisse")
+script = ExtResource("1_caisse")
+
+[node name="Collision" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_caisse")
+
+[node name="Visuel" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_caisse")
+surface_material_override/0 = ExtResource("2_metal")
