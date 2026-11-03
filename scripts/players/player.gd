@@ -15,8 +15,12 @@ extends CharacterBody3D
 
 ## Vitesse de marche, en mètres par seconde.
 @export var vitesse: float = 5.0
-## Vitesse de départ du saut : 6 donne un saut d'environ 1,8 m.
-@export var force_saut: float = 6.0
+## Vitesse de départ du saut : 9,5 donne un saut d'environ 1,8 m avec la gravité renforcée.
+@export var force_saut: float = 9.5
+## Gravité multipliée : la gravité réelle paraît trop « lunaire » dans un jeu.
+@export var multiplicateur_gravite: float = 2.5
+## En redescendant, on tombe encore plus vite : le saut paraît plus nerveux.
+@export var multiplicateur_chute: float = 1.6
 ## Vitesse à laquelle le personnage se tourne vers sa direction.
 @export var vitesse_rotation: float = 12.0
 
@@ -38,8 +42,12 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	# 1. Gravité : on tombe tant qu'on ne touche pas le sol.
+	#    Elle est renforcée, et encore plus quand on redescend.
 	if not is_on_floor():
-		velocity.y -= gravite * delta
+		var g := gravite * multiplicateur_gravite
+		if velocity.y < 0.0:
+			g *= multiplicateur_chute
+		velocity.y -= g * delta
 
 	# 2. Saut : seulement si on est posé au sol.
 	if Input.is_action_just_pressed(action("saut")) and is_on_floor():
