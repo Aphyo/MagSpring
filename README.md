@@ -92,14 +92,12 @@ La porte de la salle 3 est posée sur un seuil vert de 50 cm : les joueurs l'enj
 Les murs font 8 m de haut : le grand saut monte à environ 5,2 m, et jusqu'à 6,2 m si le Ressort s'élance depuis la caisse. L'avant du niveau est fermé par une « vitre » invisible de 12 m de haut (`VitreAvant`, une collision sans dessin) : on ne peut ni contourner les murs par l'avant, ni tomber dans le vide, et la caméra voit à travers.
 Un petit rebord court le long de l'avant du niveau pour que la caisse ne tombe pas dans le vide. Si elle tombe quand même, elle revient à sa place de départ.
 
-## Niveau 2 : une seule caisse
+## Niveau 2 : le relais et le mur violet
 
 Nouveauté : le **bouton à maintenir** (orange). La porte reste ouverte seulement tant que quelque chose de lourd est dessus. Les caisses en métal comptent comme lourdes.
 
 1. **Le relais** : le Ressort tient la porte ouverte, l'Aimant attire la caisse sur le bouton pour prendre le relais, puis les deux passent. ✅ (étape 1)
-   La caisse attend derrière la porte, dans un sas fermé par une bordure verte de 50 cm : les joueurs l'enjambent, la caisse non. Elle ne peut donc pas servir dans la salle suivante.
-2. **Une seule caisse** : un mur violet coupe la salle en deux, et l'arrivée est sur un bloc marron. Il n'y a qu'une caisse pour tenir la porte du mur violet et servir de marche à l'Aimant. La solution : le Ressort tient la porte pendant que l'Aimant fait passer la caisse, puis il saute le mur violet. ✅ (étape 2)
-   Il y a deux boutons orange, un de chaque côté du mur violet : chacun ouvre la même porte, et elle ne se referme que quand plus aucun des deux n'est enfoncé.
+2. **Le mur violet** : un mur violet coupe la salle en deux, avec une porte au milieu. Le Ressort saute le mur, puis grimpe d'un grand saut sur le bloc marron : le bouton orange posé dessus ouvre la porte, l'Aimant passe et les deux rejoignent l'arrivée, au sol après le mur. ✅ (étape 2)
 
 Ces portes descendent sous le sol au lieu de monter (`hauteur_ouverture` négative), car le mur violet est trop bas pour les cacher.
 
