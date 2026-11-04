@@ -64,7 +64,7 @@ Chaque type d'objet a sa couleur, pour comprendre la salle d'un coup d'œil.
 | Rouge (vert une fois enfoncé) | Bouton lourd : le Ressort ou une caisse l'enfonce, il reste enfoncé |
 | Orange (vert une fois enfoncé) | Bouton lourd à maintenir : il remonte dès que plus rien de lourd n'est dessus, et la porte se referme |
 | Jaune | Porte, ouverte par le bouton lourd |
-| Blanc lumineux | Arrivée, derrière la porte |
+| Blanc lumineux, colonne de lumière jaune | Arrivée : les deux joueurs doivent s'y retrouver |
 
 ## Feuille de route de la v0
 
