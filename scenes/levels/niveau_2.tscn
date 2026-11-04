@@ -70,7 +70,7 @@ operation = 2
 size = Vector3(1, 3, 2.6)
 
 [node name="BordureSas" type="CSGBox3D" parent="Decor"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0.25, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0.25, 0)
 size = Vector3(0.5, 0.5, 12)
 material = ExtResource("4_vert")
 
@@ -107,7 +107,7 @@ font_size = 36
 outline_size = 12
 
 [node name="BoutonMaintenu" parent="Salle1" instance=ExtResource("5_bouton")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 0, 0)
 maintenu = true
 
 [node name="Porte" parent="Salle1" instance=ExtResource("6_porte")]
@@ -115,7 +115,7 @@ transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, -8, 0, 0)
 hauteur_ouverture = -3.0
 
 [node name="CaisseRelais" parent="Salle1" instance=ExtResource("3_caisse")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0.5, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 0.5, 0)
 
 
 [node name="Salle2" type="Node3D" parent="."]
