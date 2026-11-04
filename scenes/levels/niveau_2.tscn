@@ -102,7 +102,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 3.6, -5.95)
 pixel_size = 0.01
 text = "Niveau 2 · Salle 1 · Le relais
 Le bouton orange ne tient la porte ouverte que tant qu'on reste dessus.
-Une caisse en métal, c'est lourd aussi…"
+Une caisse en métal attend juste derrière la porte. C'est lourd aussi…"
 font_size = 36
 outline_size = 12
 
