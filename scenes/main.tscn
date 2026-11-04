@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_main"]
-[ext_resource type="PackedScene" path="res://scenes/levels/niveau_1.tscn" id="2_niveau"]
+[ext_resource type="PackedScene" path="res://scenes/levels/niveau_2.tscn" id="2_niveau"]
 [ext_resource type="PackedScene" path="res://scenes/players/player.tscn" id="3_player"]
 [ext_resource type="Script" path="res://scripts/camera_duo.gd" id="4_camera"]
 [ext_resource type="Script" path="res://scripts/players/magnet_power.gd" id="5_aimant"]
@@ -18,8 +18,7 @@ albedo_color = Color(0.3, 0.6, 1, 0.45)
 
 [node name="Main" type="Node3D"]
 script = ExtResource("1_main")
-
-[node name="Niveau1" parent="." instance=ExtResource("2_niveau")]
+niveau = ExtResource("2_niveau")
 
 [node name="Aimant" parent="." instance=ExtResource("3_player")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, 2)
@@ -57,6 +56,6 @@ offset_top = 12.0
 offset_right = 816.0
 offset_bottom = 100.0
 theme_override_font_sizes/font_size = 20
-text = "Mag & Spring · Niveau 1 (tutoriel) · étape 3 : la salle « Ensemble »
+text = "Mag & Spring · Niveau 2 · étape 1 : le bouton à maintenir
 Aimant : ZQSD + Espace, E attirer, A repousser
 Ressort : flèches + Entrée, Maj droite maintenue puis relâchée = grand saut"

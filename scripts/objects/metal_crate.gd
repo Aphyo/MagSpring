@@ -2,6 +2,7 @@ extends RigidBody3D
 ## Une caisse en métal : la physique de Godot la fait tomber, glisser et rebondir.
 ## Elle est dans le groupe « metal » : c'est ce groupe que l'Aimant cherche
 ## autour de lui. Le Ressort, lui, ne sait rien faire avec le métal.
+## Elle est aussi dans le groupe « lourd » : posée sur un bouton lourd, elle l'enfonce.
 
 # Point de départ, pour y revenir si la caisse tombe hors du niveau.
 var _depart: Transform3D
@@ -9,6 +10,7 @@ var _depart: Transform3D
 
 func _ready() -> void:
 	add_to_group("metal")
+	add_to_group("lourd")
 	_depart = global_transform
 
 

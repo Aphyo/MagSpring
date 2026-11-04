@@ -32,7 +32,7 @@ On peut les changer dans Projet > Paramètres du projet > Contrôles (actions `p
 | Dossier | Contenu |
 | --- | --- |
 | `scenes/` | Les scènes Godot (`.tscn`). `main.tscn` est la scène lancée au démarrage. |
-| `scenes/levels/` | Les niveaux du jeu : `niveau_1.tscn` (le tutoriel, lancé au démarrage) et `test_room.tscn` (l'ancienne salle de test de la v0, décor seul). |
+| `scenes/levels/` | Les niveaux du jeu : `niveau_1.tscn` (le tutoriel), `niveau_2.tscn` et `test_room.tscn` (l'ancienne salle de test de la v0, décor seul). |
 | `scenes/players/` | Les deux personnages, l'Aimant et le Ressort. |
 | `scenes/objects/` | Les objets du décor qui réagissent : caisse métallique, bouton, porte. |
 | `scripts/` | Le code GDScript (`.gd`), rangé comme les scènes. |
@@ -61,7 +61,8 @@ Chaque type d'objet a sa couleur, pour comprendre la salle d'un coup d'œil.
 | Gris acier, brillant | Objets métalliques, que seul l'Aimant peut déplacer |
 | Bleu | L'Aimant (étape 3) |
 | Orange | Le Ressort (étape 3) |
-| Rouge (vert une fois enfoncé) | Bouton lourd, que seul le Ressort enfonce |
+| Rouge (vert une fois enfoncé) | Bouton lourd : le Ressort ou une caisse l'enfonce, il reste enfoncé |
+| Orange (vert une fois enfoncé) | Bouton lourd à maintenir : il remonte dès que plus rien de lourd n'est dessus, et la porte se referme |
 | Jaune | Porte, ouverte par le bouton lourd |
 | Blanc lumineux | Arrivée, derrière la porte |
 
@@ -90,6 +91,21 @@ Le passage de la salle 1 est bas (2,2 m) : on ne peut pas sauter par-dessus la c
 La porte de la salle 3 est posée sur un seuil vert de 50 cm : les joueurs l'enjambent d'un saut, mais l'Aimant ne peut pas y faire passer la caisse de la salle 1 (il pousse à plat, sans soulever). Sinon on pourrait l'utiliser comme marche en salle 3 sans l'aide du Ressort.
 Les murs font 8 m de haut : le grand saut monte à environ 5,2 m, et jusqu'à 6,2 m si le Ressort s'élance depuis la caisse. L'avant du niveau est fermé par une « vitre » invisible de 12 m de haut (`VitreAvant`, une collision sans dessin) : on ne peut ni contourner les murs par l'avant, ni tomber dans le vide, et la caméra voit à travers.
 Un petit rebord court le long de l'avant du niveau pour que la caisse ne tombe pas dans le vide. Si elle tombe quand même, elle revient à sa place de départ.
+
+## Niveau 2 : une seule caisse
+
+Nouveauté : le **bouton à maintenir** (orange). La porte reste ouverte seulement tant que quelque chose de lourd est dessus. Les caisses en métal comptent comme lourdes.
+
+1. **Le relais** : le Ressort tient la porte ouverte, l'Aimant attire la caisse sur le bouton pour prendre le relais, puis les deux passent. ✅ (étape 1)
+   La caisse attend derrière la porte, dans un sas fermé par une bordure verte de 50 cm : les joueurs l'enjambent, la caisse non. Elle ne peut donc pas servir dans la salle suivante.
+2. **Une seule caisse** : un mur violet coupe la salle en deux, et l'arrivée est sur un bloc marron. Il n'y a qu'une caisse pour tenir la porte du mur violet et servir de marche à l'Aimant. (étape 2)
+
+Ces portes descendent sous le sol au lieu de monter (`hauteur_ouverture` négative), car le mur violet est trop bas pour les cacher.
+
+## Changer de niveau
+
+Le niveau joué est choisi dans `main.tscn` : clique sur le nœud **Main** dans l'arbre de la scène, puis dans l'Inspecteur, champ **Niveau**, choisis un fichier de `scenes/levels/`.
+Le niveau est ajouté au lancement du jeu (F5) : il n'apparaît pas dans la vue 3D de `main.tscn`, il faut ouvrir son propre fichier pour le voir.
 
 Après la v0 : export Web servi par un VPS et jeu en ligne à deux via un relais WebSocket.
 
