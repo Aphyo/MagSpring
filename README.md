@@ -99,6 +99,7 @@ Nouveauté : le **bouton à maintenir** (orange). La porte reste ouverte seuleme
 1. **Le relais** : le Ressort tient la porte ouverte, l'Aimant attire la caisse sur le bouton pour prendre le relais, puis les deux passent. ✅ (étape 1)
    La caisse attend derrière la porte, dans un sas fermé par une bordure verte de 50 cm : les joueurs l'enjambent, la caisse non. Elle ne peut donc pas servir dans la salle suivante.
 2. **Une seule caisse** : un mur violet coupe la salle en deux, et l'arrivée est sur un bloc marron. Il n'y a qu'une caisse pour tenir la porte du mur violet et servir de marche à l'Aimant. La solution : le Ressort tient la porte pendant que l'Aimant fait passer la caisse, puis il saute le mur violet. ✅ (étape 2)
+   Il y a deux boutons orange, un de chaque côté du mur violet : chacun ouvre la même porte, et elle ne se referme que quand plus aucun des deux n'est enfoncé.
 
 Ces portes descendent sous le sol au lieu de monter (`hauteur_ouverture` négative), car le mur violet est trop bas pour les cacher.
 

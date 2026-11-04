@@ -125,12 +125,17 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.3, -5.95)
 pixel_size = 0.01
 text = "Salle 2 · Une seule caisse
 Le Ressort saute le mur violet, l'Aimant a besoin de la porte.
-Et pour monter sur le bloc marron ? Il n'y a qu'une caisse…"
+Et pour monter sur le bloc marron ? Il n'y a qu'une caisse…
+Un bouton orange de chaque côté du mur violet ouvre la même porte."
 font_size = 36
 outline_size = 12
 
 [node name="BoutonMaintenu" parent="Salle2" instance=ExtResource("5_bouton")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, 3)
+maintenu = true
+
+[node name="BoutonMaintenuApres" parent="Salle2" instance=ExtResource("5_bouton")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 3)
 maintenu = true
 
 [node name="Porte" parent="Salle2" instance=ExtResource("6_porte")]
@@ -147,3 +152,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 2.4, -3.5)
 [connection signal="relache" from="Salle1/BoutonMaintenu" to="Salle1/Porte" method="fermer"]
 [connection signal="active" from="Salle2/BoutonMaintenu" to="Salle2/Porte" method="ouvrir"]
 [connection signal="relache" from="Salle2/BoutonMaintenu" to="Salle2/Porte" method="fermer"]
+[connection signal="active" from="Salle2/BoutonMaintenuApres" to="Salle2/Porte" method="ouvrir"]
+[connection signal="relache" from="Salle2/BoutonMaintenuApres" to="Salle2/Porte" method="fermer"]

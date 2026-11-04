@@ -12,6 +12,11 @@ extends AnimatableBody3D
 
 var ouverte := false
 
+# Combien de boutons tiennent la porte ouverte en ce moment.
+# Avec deux boutons sur la même porte, elle ne se referme que quand
+# plus aucun des deux n'est enfoncé.
+var _demandes := 0
+
 # Hauteur de la porte fermée, retenue au démarrage.
 var _y_fermee: float
 # Le mouvement en cours, pour pouvoir l'interrompre si on change d'avis.
@@ -23,6 +28,8 @@ func _ready() -> void:
 
 
 func ouvrir() -> void:
+	# Un bouton de plus tient la porte.
+	_demandes += 1
 	if ouverte:
 		return
 	ouverte = true
@@ -30,6 +37,11 @@ func ouvrir() -> void:
 
 
 func fermer() -> void:
+	# Un bouton de moins tient la porte (jamais en dessous de zéro).
+	_demandes = max(_demandes - 1, 0)
+	# Tant qu'un autre bouton la tient encore, la porte reste ouverte.
+	if _demandes > 0:
+		return
 	if not ouverte:
 		return
 	ouverte = false
