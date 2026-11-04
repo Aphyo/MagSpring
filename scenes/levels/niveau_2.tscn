@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3]
+[gd_scene load_steps=13 format=3]
 
 [ext_resource type="Material" path="res://assets/materials/sol.tres" id="1_sol"]
 [ext_resource type="Material" path="res://assets/materials/mur.tres" id="2_mur"]
@@ -6,6 +6,9 @@
 [ext_resource type="Material" path="res://assets/materials/marche.tres" id="4_vert"]
 [ext_resource type="PackedScene" path="res://scenes/objects/heavy_button.tscn" id="5_bouton"]
 [ext_resource type="PackedScene" path="res://scenes/objects/door.tscn" id="6_porte"]
+[ext_resource type="Material" path="res://assets/materials/plateforme_haute.tres" id="7_violet"]
+[ext_resource type="Material" path="res://assets/materials/corniche.tres" id="8_corniche"]
+[ext_resource type="PackedScene" path="res://scenes/objects/arrivee.tscn" id="9_arrivee"]
 
 [sub_resource type="Environment" id="Environment_niveau2"]
 background_mode = 1
@@ -37,8 +40,8 @@ size = Vector3(32, 1, 12)
 material = ExtResource("1_sol")
 
 [node name="MurFond" type="CSGBox3D" parent="Decor"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 4, -6.25)
-size = Vector3(33, 8, 0.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 5, -6.25)
+size = Vector3(33, 10, 0.5)
 material = ExtResource("2_mur")
 
 [node name="MurGauche" type="CSGBox3D" parent="Decor"]
@@ -71,6 +74,21 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0.25, 0)
 size = Vector3(0.5, 0.5, 12)
 material = ExtResource("4_vert")
 
+[node name="MurViolet" type="CSGBox3D" parent="Decor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.125, 0)
+size = Vector3(0.5, 4.25, 12)
+material = ExtResource("7_violet")
+
+[node name="Passage2" type="CSGBox3D" parent="Decor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+operation = 2
+size = Vector3(1, 3, 2.6)
+
+[node name="Corniche" type="CSGBox3D" parent="Decor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 1.2, -3.5)
+size = Vector3(4, 2.4, 5)
+material = ExtResource("8_corniche")
+
 [node name="VitreAvant" type="StaticBody3D" parent="."]
 
 [node name="Forme" type="CollisionShape3D" parent="VitreAvant"]
@@ -99,5 +117,33 @@ hauteur_ouverture = -3.0
 [node name="CaisseRelais" parent="Salle1" instance=ExtResource("3_caisse")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0.5, 0)
 
+
+[node name="Salle2" type="Node3D" parent="."]
+
+[node name="Panneau" type="Label3D" parent="Salle2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.3, -5.95)
+pixel_size = 0.01
+text = "Salle 2 · Une seule caisse
+Le Ressort saute le mur violet, l'Aimant a besoin de la porte.
+Et pour monter sur le bloc marron ? Il n'y a qu'une caisse…"
+font_size = 36
+outline_size = 12
+
+[node name="BoutonMaintenu" parent="Salle2" instance=ExtResource("5_bouton")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, 3)
+maintenu = true
+
+[node name="Porte" parent="Salle2" instance=ExtResource("6_porte")]
+transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 0, 0, 0)
+hauteur_ouverture = -3.0
+
+[node name="CaisseUnique" parent="Salle2" instance=ExtResource("3_caisse")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0.5, -3)
+
+[node name="Arrivee" parent="Salle2" instance=ExtResource("9_arrivee")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 2.4, -3.5)
+
 [connection signal="active" from="Salle1/BoutonMaintenu" to="Salle1/Porte" method="ouvrir"]
 [connection signal="relache" from="Salle1/BoutonMaintenu" to="Salle1/Porte" method="fermer"]
+[connection signal="active" from="Salle2/BoutonMaintenu" to="Salle2/Porte" method="ouvrir"]
+[connection signal="relache" from="Salle2/BoutonMaintenu" to="Salle2/Porte" method="fermer"]
